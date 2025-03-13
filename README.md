@@ -2,6 +2,7 @@ Task Management Application
 A full-stack Task Management Application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. Users can register, log in, and manage their tasks securely. The application includes authentication, authorization, pagination, and input validation for an improved user experience.
 
 Features
+
 ✅ User Authentication – Secure JWT-based authentication for user accounts.
 ✅ Task Management – Perform Create, Read, Update, Delete (CRUD) operations on tasks.
 ✅ Authorization – Users can only manage their own tasks.
@@ -10,6 +11,7 @@ Features
 
 Technologies Used
 Frontend (React.js + Vite)
+
 🔹 React.js – Frontend library for building UI.
 🔹 Vite – Fast build tool for React development.
 🔹 React Router – Client-side routing for seamless navigation.
@@ -18,17 +20,19 @@ Frontend (React.js + Vite)
 🔹 Tailwind CSS – Modern and responsive UI design.
 
 Backend (Node.js + Express.js)
+
 🔹 Express.js – Lightweight Node.js framework for API handling.
 🔹 MongoDB + Mongoose – NoSQL database for storing tasks and user data.
 🔹 bcrypt – Secure password hashing for authentication.
 🔹 JWT (JSON Web Tokens) – Secure user authentication and session management.
 
 Getting Started
+
 1️- Clone the Repository
 sh
 Copy
 Edit
-git clone https://github.com/Taufiqul7756/Task-Management-NextJS.git
+git clone https://github.com/Kirissh/TaskManager
 2- Backend Setup
 Navigate to the server directory:
 
