@@ -111,11 +111,3 @@ For a complete guide to available API endpoints, check out the **[Postman API Do
 
 ---
 
-## License
-
-This project is open-source and available under the **MIT License**.
-
----
-
-🚀 **Happy Coding!** Let me know if you need any further improvements! 😊
-
