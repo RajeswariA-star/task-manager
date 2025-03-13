@@ -24,16 +24,18 @@ const Login = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-200 sm:px-6 lg:px-8">
-      <div className="max-w-md w-full space-y-8 bg-white px-20 border py-5">
-        <div>
-          <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">
-            Login
+    <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-50 to-blue-100 p-4 sm:p-6 lg:p-8">
+      <div className="max-w-md w-full space-y-6 bg-white rounded-xl shadow-lg p-8 border border-gray-100">
+        <div className="text-center">
+          <h2 className="text-3xl font-extrabold text-gray-900 mb-2">
+            Welcome Back
           </h2>
+          <p className="text-sm text-gray-600">Sign in to your account</p>
         </div>
-        <form className="mt-8 space-y-6" onSubmit={handleSubmit}>
+        
+        <form className="mt-6 space-y-5" onSubmit={handleSubmit}>
           <div>
-            <label className="block text-sm font-medium text-gray-700">
+            <label className="block text-sm font-medium text-gray-700 mb-1">
               Email address
             </label>
             <input
@@ -42,59 +44,83 @@ const Login = () => {
               id="email"
               autoComplete="email"
               required
-              className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+              className="appearance-none block w-full px-3 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
               value={loginInfo?.email}
               onChange={handleChange}
+              placeholder="your@email.com"
             />
             {loginError?.email && (
-              <p className="text-red-500 text-xs italic">{loginError.email}</p>
+              <p className="text-red-500 text-xs mt-1">{loginError.email}</p>
             )}
           </div>
+          
           <div>
-            <label className="block text-sm font-medium text-gray-700">
-              Password
-            </label>
+            <div className="flex items-center justify-between mb-1">
+              <label className="block text-sm font-medium text-gray-700">
+                Password
+              </label>
+              <div className="text-xs text-indigo-600 hover:text-indigo-500 cursor-pointer">
+                Forgot password?
+              </div>
+            </div>
             <input
               type="password"
               name="password"
               id="password"
               autoComplete="current-password"
               required
-              className="mt-1 p-2 border border-gray-300 rounded-md w-full"
+              className="appearance-none block w-full px-3 py-2.5 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
               value={loginInfo?.password}
               onChange={handleChange}
+              placeholder="••••••••••••"
             />
             {loginError?.password && (
-              <p className="text-red-500 text-xs italic">
+              <p className="text-red-500 text-xs mt-1">
                 {loginError.password}
               </p>
             )}
           </div>
-          <div>
+
+          {loginError && (
+            <div className="bg-red-50 px-4 py-3 rounded-lg">
+              <p className="text-red-600 text-sm">{loginError.message}</p>
+            </div>
+          )}
+          
+          <div className="pt-2">
             <button
               type="submit"
-              className="w-full py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              className="w-full flex justify-center py-3 px-4 border border-transparent rounded-lg shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors duration-200"
               disabled={isLoginLoading}
             >
-              {isLoginLoading ? "Logging in..." : "Login"}
+              {isLoginLoading ? (
+                <span className="flex items-center">
+                  <svg className="animate-spin -ml-1 mr-2 h-4 w-4 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4"></circle>
+                    <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                  </svg>
+                  Signing in...
+                </span>
+              ) : "Sign in"}
             </button>
           </div>
         </form>
 
-        <div className="mt-4 grid justify-center items-center">
-          {loginError && (
-            <p className="text-red-500 mt-2">{loginError.message}</p>
-          )}
-          <span className="mt-4">
-            Dont have an account?{" "}
-            <span className="text-blue-500 ml-3">
-              <Link to="/register">Register</Link>
-            </span>{" "}
-          </span>
+        <div className="mt-4 text-center">
+          <p className="text-sm text-gray-600">
+            Don't have an account?{" "}
+            <Link to="/register" className="font-medium text-indigo-600 hover:text-indigo-500 transition-colors duration-200">
+              Create an account
+            </Link>
+          </p>
         </div>
-        <div className="bg-gray-100 px-5 py-2">
-          <p>Email: taufiq@gmail.com</p>
-          <p>Password: Diu123456789@</p>
+        
+        <div className="bg-gray-50 p-4 rounded-lg border border-gray-100 mt-6">
+          <p className="text-xs text-gray-500 font-medium mb-1">Demo credentials:</p>
+          <div className="text-sm text-gray-700">
+            <p><span className="font-medium">Email:</span> taufiq@gmail.com</p>
+            <p><span className="font-medium">Password:</span> Diu123456789@</p>
+          </div>
         </div>
       </div>
     </div>
