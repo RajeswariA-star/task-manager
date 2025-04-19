@@ -1,0 +1,7 @@
+A full-stack Task Management Application built using the MERN (MongoDB, Express.js, React.js, Node.js) stack. Users can register, log in, and manage their tasks securely. The application includes authentication, authorization, pagination, and input validation for an improved user experience.
+
+Features User Authentication – Secure JWT-based authentication for user accounts.
+Task Management – Perform Create, Read, Update, Delete (CRUD) operations on tasks.
+Authorization – Users can only manage their own tasks.
+Pagination – Efficient task listing with pagination for better performance.
+Input Validation – Secure and structured input handling using Validator.
